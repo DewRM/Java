@@ -1,18 +1,25 @@
 import java.util.Scanner;
 
-public class CalculatingTriangleArea {
+public class UcgeninAlani {
     public static void main(String[] args) {
-        // Degiskenler
-                int a, b;
-                double c;
+        Scanner ucgen = new Scanner(System.in);
 
-        Scanner girdi = new Scanner(System.in);
-        System.out.print("1. Kenari Giriniz = ");
-        a = girdi.nextInt();
-        System.out.print("2. Kenari Giriniz = ");
-        b = girdi.nextInt();
+        double a, b, c, u, cevre, alan;
 
-        c= Math.sqrt((a*a) + (b*b));
-        System.out.print("Hipotenus Degeri = " + c);
+        System.out.print("A Kenarini Giriniz: ");
+        a = ucgen.nextDouble();
+
+        System.out.print("B Kenarini Giriniz: ");
+        b = ucgen.nextDouble();
+
+        System.out.print("C Kenarini Giriniz: ");
+        c = ucgen.nextDouble();
+
+        u = (a + b + c) / 2;
+        cevre = 2 * u;
+        alan = (a * b) /  2;
+
+        System.out.println("Cevresi: " + cevre);
+        System.out.print("Alani: " + alan);
     }
 }
