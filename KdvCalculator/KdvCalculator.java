@@ -1,22 +1,24 @@
 import java.util.Scanner;
 
-public class KdvCalculator {
+public class KdvHesaplama {
     public static void main(String[] args) {
-        double fiyat, kdvOrani = 0.18, kdvTutari, kdvliFiyat, kdvSecimi;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Urun Fiyati : ");
-        fiyat = input.nextDouble();
+        Scanner scan = new Scanner(System.in);
 
-        kdvTutari = fiyat * kdvOrani;
-        kdvliFiyat = fiyat + kdvTutari;
+        double para, paraKdv, kdvTutar, kdv;
+        boolean kosul;
 
-        boolean  kosul = fiyat >= 1000;
-        kdvSecimi = kosul ? 0.8 : 0.18;
-        kdvTutari = (fiyat * kdvSecimi);
+        System.out.print("KDV'sini Hesaplamak Istediginiz Tutari Giriniz: ");
+        para = scan.nextInt();
 
-        System.out.println("KDV'siz Fiyat= " + fiyat);
-        System.out.println("KDV Orani= " + kdvSecimi);
-        System.out.println("KDV Tutari= " + kdvTutari);
-        System.out.println("KDVL'li Fiyat= " + kdvliFiyat);
+        kosul = 1000 < para;
+        kdv = kosul ? 0.08 : 0.18;
+
+        kdvTutar = kdv * para;
+        paraKdv = kdvTutar + para;
+
+        System.out.println("KDV Orani = " + kdv);
+        System.out.println("KDV Tutari = " + kdvTutar);
+        System.out.println("KDV'siz Fiyat = " + para);
+        System.out.println("KDV'li Fiyat = " + paraKdv);
     }
 }
