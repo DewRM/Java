@@ -1,25 +1,24 @@
 import java.util.Scanner;
 
-public class UcgeninAlani {
+public class Hipotenus {
     public static void main(String[] args) {
-        Scanner ucgen = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        double a, b, c, u, cevre, alan;
+        int a, b;
+        double c, cevre, alan;
 
-        System.out.print("A Kenarini Giriniz: ");
-        a = ucgen.nextDouble();
+        System.out.print("A Kenarinin Uzunlugunu Giriniz: ");
+        a = input.nextInt();
 
-        System.out.print("B Kenarini Giriniz: ");
-        b = ucgen.nextDouble();
+        System.out.print("B Kenarinin Uzunlugunu Giriniz: ");
+        b = input.nextInt();
 
-        System.out.print("C Kenarini Giriniz: ");
-        c = ucgen.nextDouble();
+        c = Math.sqrt ((a*a) + (b*b));
+        System.out.println("C Kenarinin Uzunlugu: " + c);
 
-        u = (a + b + c) / 2;
-        cevre = 2 * u;
-        alan = (a * b) /  2;
-
-        System.out.println("Cevresi: " + cevre);
-        System.out.print("Alani: " + alan);
+        cevre = a + b + c;
+        alan = (a * b) / 2;
+        System.out.println("Ucgenin Cevresi = " + cevre);
+        System.out.print("Ucgenin Alani = " + alan);
     }
 }
